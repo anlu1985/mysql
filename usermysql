@@ -27,7 +27,7 @@ FOREIGN KEY (emailId)
 REFERENCES db_user.email(id);
 
 
-INSERT INTO db_user.user;
+INSERT INTO db_user.user VALUSE （null,'username','message'）;
 CREATE TABLE db_user.user(
   usernameId   VARCHAR(255) NOT NULL
   COMMENT 'FK',
