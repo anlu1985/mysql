@@ -25,3 +25,23 @@ ALTER TABLE db_user.landing
   fk_landing_emailId
 FOREIGN KEY (emailId)
 REFERENCES db_user.email(id);
+
+
+INSERT INTO db_user.user;
+CREATE TABLE db_user.user(
+  usernameId   VARCHAR(255) NOT NULL
+  COMMENT 'FK',
+  message    VARCHAR(255) NOT NULL
+  COMMENT '留言'
+)
+  COMMENT '留言表';
+
+ALTER TABLE db_user.user
+  ADD CONSTRAINT
+  fk_db_user.user_usernameId
+FOREIGN KEY (usernameId)
+REFERENCES db_user.username(id);
+
+SELECT *
+FROM db_user.user
+WHERE username = 'id';
