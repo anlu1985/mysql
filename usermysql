@@ -1,0 +1,27 @@
+DROP DATABASE IF EXISTS db_user;
+CREATE DATABASE db_user;
+
+DROP TABLE IF EXISTS db_user.register;
+CREATE TABLE db_user.register(
+  email   VARCHAR(255) AUTO_INCREMENT PRIMARY KEY
+  COMMENT '邮箱',
+  acount  VARCHAR(255) NOT NULL
+  COMMENT '账号',
+  password  VARCHAR(255) NOT NULL
+  COMMENT '密码'
+);
+
+DROP TABLE IF EXISTS db_user.landing;
+CREATE TABLE db_user.landing(
+  emailId  VARCHAR(255) AUTO_INCREMENT
+  COMMENT 'FK',
+  passwordId  VARCHAR(255) NOT NULL
+  COMMENT 'FK'
+);
+
+
+ALTER TABLE db_user.landing
+  ADD CONSTRAINT
+  fk_landing_emailId
+FOREIGN KEY (emailId)
+REFERENCES db_user.email(id);
